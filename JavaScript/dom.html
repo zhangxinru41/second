@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom对象操作</title>
+</head>
+<body>
+    <input name="input" id="input1" value="xiaozhang" onclick="getValue()"><br>
+    <input name="input" id="input2" value="6"><br>
+    <input name="input" value="hhhhhh"><br>
+    <input type="button" value="元素个数" onclick="getElements()">
+    <input type="button" value="累加" onclick="increase()">
+    <br><br>
+    <input type="number" id="txt">
+    <input type="button" value="累加" id="btn_add">
+    <script>
+         function getValue(){
+              var i=document.getElementById("input1");
+              alert(i.value);
+         }
+         function getElements(){
+             var a=document.getElementsByName("input");
+             alert("have "+a.length+" input element, "+" third input is "+a[2].value);
+         }
+         function increase(){
+             var i2=document.querySelector("#input2");
+             i2.value++;
+         }
+
+         (function(){
+             var input_txt=document.querySelector("#txt");
+             var btn=document.querySelector("#btn_add");
+             btn.addEventListener("click",function(e){
+                 input_txt.value++;
+             })
+         })();
+    </script>
+</body>
+</html>
